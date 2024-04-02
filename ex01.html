@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+        }
+        input.nome, input.sobrenome, input.repeticoes{
+            padding: 5px;
+            border: 1px solid orangered;
+            transition: background-color 0.3s ease;
+        }
+        input.nome:hover, input.sobrenome:hover, input.repeticoes:hover{
+            background-color: orangered;
+        }
+        input.nome:focus, input.sobrenome:focus, input.repeticoes:focus{
+            background-color: blue;
+        }
+        .link{
+            color: white;
+            display: inline-block;
+            padding: 8px 20px;
+            background-color: orangered;
+            text-decoration: none;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+        .link:hover{
+            background-color: blue;
+        }
+        .enviar{
+            color: white;
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: orangered;
+            text-decoration: none;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+        .enviar:hover{
+            background-color: blue;
+        }
+    </style>
+    <script>
+        function validarFormulario(){
+            var sobrenome = document.getElementById('sobrenome').value;
+            var nome = document.getElementById('nome').value;
+            var repeticoes = document.getElementById('repeticoes').value;
+            if (nome === ''){
+                alert("O campo nome deve ser preenchido!")
+                return false
+            }
+            else if (sobrenome === ''){
+                alert("O campo sobrenome deve ser preenchido!")
+                return false
+            }
+            else if (repeticoes === ''){
+                alert("Repetições devem ser preenchidas")
+                return false
+            }
+            else{
+                return true
+            }
+        }
+    </script>
+</head>
+<body>
+    <center>
+        <img src="imagem/logo_unisuam.png" alt="Logo unisuam">
+    </center>
+    <fieldset>
+        <h2>Insira as informações</h2>
+        <form action="ex01.php" method="post" name="formulario" onsubmit="return validarFormulario()">
+            <label for="nome">Nome: </label>
+            <input type="text" name="nome" id="nome" class="nome" required ><br>
+
+            <label for="sobrenome">Sobrenome: </label>
+            <input type="text" name="sobrenome" id="sobrenome" class="sobrenome" required ><br>
+
+            <label for="repeticoes">Repetições: </label>
+            <input type="number" name="repeticoes" id="repeticoes" class="repeticoes" required><br><br>
+            <input type="submit" value="Enviar" class="enviar">
+            <a href="principal.php" class= "link" name= "link" id="link">Voltar</a>
+        </form>
+    </fieldset>
+</body>
+</html>

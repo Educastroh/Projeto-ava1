@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 3</title>
+    <style>
+        body{
+            background-color: black;
+            color: orangered;
+
+        }
+        .link{
+            color: white;
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: orangered;
+            text-decoration: none;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+        .link:hover{
+            background-color: blue;
+        }
+        input.massa, input.volume{
+            padding: 5px;
+            border: 1px solid orangered;
+            transition: background-color 0.3s ease;
+        }
+        input.volume:hover, input.massa:hover{
+            background-color: orangered;
+        }
+        input.massa:focus, input.volume:focus{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <center><img src="imagem/logo_unisuam.png" alt="Logo Unisuam" srcset=""></center>
+    <h1>Exercicio 3</h1>
+    <fieldset>
+        
+        <h3>Calcular Densidade</h3>
+        <form action="ex03.php" method="post">
+            <label for="massa">Massa: </label>
+            <input type="number" name="massa" id="massa" class="massa" required><br><br>
+            <label for="volume">Volume: </label>
+            <input type="number" name="volume" id="volume" class="volume" required><br><br>
+            <input type="submit" value="Enviar" class="link">
+            <a href="principal.php" class="link">Voltar</a>
+        </form>
+    </fieldset>
+</body>
+</html>

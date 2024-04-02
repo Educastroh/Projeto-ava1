@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input.usuario, input.senha{
+            padding: 5px;
+            border: 1px solid orangered;
+            transition: background-color 0.3s ease;
+        }
+        input.usuario:hover, input.senha:hover{
+            background-color: orangered;
+        }
+        input.usuario:focus, input.senha:focus{
+            background-color: blue;
+        }
+        body{
+            background-color: black;
+            color: orangered;
+        }
+        .link{
+            color: white;
+            display: inline-block;
+            padding: 8px 20px;
+            background-color: orangered;
+            text-decoration: none;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+        .link:hover{
+            background-color: blue;
+        }
+        .enviar{
+            color: white;
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: orangered;
+            text-decoration: none;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+        .enviar:hover{
+            background-color: blue;
+        }
+        .erro{
+            background-color: red;
+            color: white;
+            display: none;
+        }
+    </style>
+    <script>
+        function validarLogin(){
+            var usuario = document.getElementById("usuario").value;
+            var senha = document.getElementById("senha").value;
+            if(usuario !== 23102404 && senha !== "Espetacular1122#"){
+                alert('CREDENCIAS INCORRETAS');
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <center><img src="imagem/logo_unisuam.png" alt="Logo Unisuam" srcset="" center></center>
+    <fieldset>
+        <h1>Exercicio 2</h1>
+        <form action="ex02.php" method="post" id="form" onsubmit="return validarLogin()">
+            <label for="usuario">Usuario: </label>
+            <input type="text" name="usuario" id="usuario" class="usuario" required><br>
+
+            <label for="senha">Senha: </label>
+            <input type="password" name="senha" id="senha" class="senha" required><br>
+
+            <input type="submit" value="Enviar" class="enviar">
+            <a href="principal.php" class="link">Voltar</a>
+        </form>
+    </fieldset>
+</body>
+
+</html>
